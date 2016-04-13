@@ -4,8 +4,10 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
+target
+.idea
+*iml
 *.ear
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
