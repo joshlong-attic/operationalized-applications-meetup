@@ -8,7 +8,7 @@ resources:
 - name: pivotal-web-services
   type: cf
   source:
-    api: http://api.run.pivotal.io
+    api: https://api.run.pivotal.io
     username: {{pws-username}}
     password: {{pws-password}}
     organization: {{pws-organization}}

@@ -6,5 +6,3 @@ applications:
   buildpack: java_buildpack
   host: operationalized-applications
   domain: cfapps.io
-  services:
-  - hostedgraphite
