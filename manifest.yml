@@ -1,0 +1,10 @@
+---
+applications:
+- name: operationalized-applications
+  memory: 1024M
+  instances: 3
+  buildpack: java_buildpack
+  host: operationalized-applications
+  domain: cfapps.io
+  services:
+  - hostedgraphite
