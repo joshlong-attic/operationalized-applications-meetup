@@ -20,6 +20,10 @@ jobs:
   - get: github
     trigger: true
   - task: maven-install
+    params:
+      HOSTEDGRAPHITE_APIKEY: {{hostedgraphite-apikey}}
+      HOSTEDGRAPHITE_URL: {{hostedgraphite-url}}
+      HOSTEDGRAPHITE_PORT: {{hostedgraphite-port}}
     file: github/ci/tasks/build.yml
   - put: pivotal-web-services
     params:
