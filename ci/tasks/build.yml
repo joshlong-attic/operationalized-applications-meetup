@@ -1,0 +1,15 @@
+---
+platform: linux
+image_resource:
+  type: docker-image
+  source: {repository: "jova", tag: "8"}
+inputs:
+- name: github
+output:
+- name: jar
+run:
+  path: sh
+  args:
+  - -exc
+  - |
+    cd github && ./mvnw install && mv target/demo*.jar ../jar/demo.jar
