@@ -5,10 +5,10 @@ resources:
   source:
     uri: https://github.com/joshlong/operationalized-applications-meetup
     branch: master
-- name: pws
+- name: pivotal-web-services
   type: cf
   source:
-    api: https://api.run.pivotal.io
+    api: http://api.run.pivotal.io
     username: {{pws-username}}
     password: {{pws-password}}
     organization: {{pws-organization}}
@@ -18,9 +18,10 @@ jobs:
 - name: make-jar-not-war
   plan:
   - get: github
-  - task: maven
+    trigger: true
+  - task: maven-install
     file: github/ci/tasks/build.yml
-  - put: pws
+  - put: pivotal-web-services
     params:
       path: jar/demo.jar
       current_app_name: operationalized-applications

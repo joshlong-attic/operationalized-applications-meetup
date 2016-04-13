@@ -2,7 +2,7 @@
 platform: linux
 image_resource:
   type: docker-image
-  source: {repository: "jova", tag: "8"}
+  source: {repository: "java", tag: "8"}
 inputs:
 - name: github
 outputs:
