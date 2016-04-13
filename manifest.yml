@@ -1,6 +1,9 @@
 ---
 applications:
-- name: operationalized-applications
+- memory: 1024M
+  instances: 2
   buildpack: java_buildpack
+  domain: cfapps.io
   services:
   - hostedgraphite
+  - my-logs
