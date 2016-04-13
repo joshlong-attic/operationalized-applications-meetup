@@ -31,9 +31,9 @@ public class DemoApplication {
 	}
 
 	@Bean
-	GraphiteReporter graphiteReporter(@Value("${HOSTEDGRAPHITE_APIKEY}") String prefix,
-	                                  @Value("http://${HOSTEDGRAPHITE_URL}") URL url,
-	                                  @Value("${HOSTEDGRAPHITE_PORT}") int port,
+	GraphiteReporter graphiteReporter(@Value("${HOSTEDGRAPHITE_APIKEY:${vcap.services.hostedgraphite.credentials.apikey:}}") String prefix,
+	                                  @Value("${HOSTEDGRAPHITE_URL:${vcap.services.hostedgraphite.credentials.url:}}") URL url,
+	                                  @Value("${HOSTEDGRAPHITE_PORT:${vcap.services.hostedgraphite.credentials.port:0}}") int port,
 	                                  MetricRegistry registry) {
 
 		java.security.Security.setProperty("networkaddress.cache.ttl", "60");
