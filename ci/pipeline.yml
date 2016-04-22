@@ -27,6 +27,6 @@ jobs:
     file: github/ci/tasks/build.yml
   - put: pivotal-web-services
     params:
-      path: jar/demo.jar
+      path: jar/rr.jar
       current_app_name: operationalized-applications
       manifest: github/manifest.yml
